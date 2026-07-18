@@ -1,0 +1,133 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: hsl(30, 38%, 92%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    /* border: 3px solid red; */
+    max-width: 375px;
+    margin: 15px;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 10px;
+}
+
+.card__content{
+    padding: 35px;
+}
+
+.card__content p{
+    font-size: 16px;
+}
+
+.card__img img{
+    max-width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.product__type{
+    font-family: Montserrat;
+    font-weight: 500;
+    font-size: .8em !important;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    color: hsl(228, 12%, 48%);
+    margin-bottom: 30px;
+}
+
+.product__name{
+    font-family: Fraunces;
+    color: hsl(212, 21%, 14%);
+    font-size: 2em;
+    font-weight: 800;
+    line-height: 1em;
+    margin-bottom: 20px;
+}
+
+.product__details{
+    font-family: Montserrat;
+    color: hsl(228, 12%, 48%);
+    font-weight: 500;
+    margin-bottom: 20px;
+    line-height: 1.3em;
+}
+
+.product__price{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.price-now{
+    font-family: Fraunces;
+    color: hsl(158, 36%, 37%);
+    font-size: 2em;
+    font-weight: 700;
+    margin-right: 12px;
+}
+
+.price-before{
+    font-family: Montserrat;
+    color: hsl(228, 12%, 48%);
+    font-size: .8em;
+    font-weight: 400;
+    text-decoration: line-through;
+}
+
+.product__add{
+    background-color: hsl(158, 36%, 37%);
+    color: hsl(0, 0%, 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 17px;
+    border-radius: 8px;
+    font-family: Montserrat;
+    font-weight: 500;
+    font-size: .8em;
+}
+
+.product__add:hover{
+    background-color: hsl(158, 42%, 18%);
+}
+
+.product__add img{
+    margin-right: 10px;
+}
+
+.product__add img, .product__add span{
+    user-select: none;
+}
+
+footer{
+    margin-bottom: 20px;
+}
+
+
+
+@media screen and (min-width: 800px){
+    .card{
+        max-width: 600px;
+        display: flex;
+    }
+
+    .card__img, .card__content{
+        width: 50%;
+    }
+
+    .card__img picture{
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px 0 0 10px;
+    }
+
+}
