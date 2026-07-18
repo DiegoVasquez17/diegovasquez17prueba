@@ -7,7 +7,46 @@
 </head>
 <body>
 
-    <a href="web-completa.html">Web Completa</a>
+    <style>
+
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            background-color: #ccf;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main{
+            background-color: #fff;
+            width: clamp(200px, 80%, 1000px);
+            height: 80vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 12px;
+        }
+
+        .main a{
+            display: inline-block;
+            background-color: #333;
+            color: #aef;
+            padding: 12px;
+            text-decoration: none;
+            border-radius: 3px;
+            font-weight: 600;
+            text-shadow: 0 0 5px #69b;
+        }
+        
+    </style>
+
+    <div class="main">
+        <a href="web-completa.html">Web Completa</a>
+    </div>
     
 </body>
 </html>
