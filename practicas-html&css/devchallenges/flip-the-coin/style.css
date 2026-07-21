@@ -1,5 +1,6 @@
 :root{
     --dark-blue: #2a2f3f;
+
 }
 
 *{
@@ -40,12 +41,36 @@ body{
 .coin{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center;    
 }
 
-.coin .img{
+.img-container{
     width: 100px;
+    height: 100px;
     margin-bottom: 25px;
+    position: relative;
+    --spins: 20;
+}
+
+.heads, .tails{
+    position: absolute;
+    width: 100%;
+    backface-visibility: hidden;
+}
+
+.heads{
+    --rotation: 0deg;
+    transform: rotateY(var(--rotation));
+}
+
+.tails{
+    --rotation: 180deg;
+    transform: rotateY(var(--rotation));
+}
+
+.animate{
+    animation: spin both;
+    animation-timing-function: cubic-bezier(0.17, 0.67, 0.35, 1);
 }
 
 .coin .shadow{
@@ -69,7 +94,21 @@ body{
     letter-spacing: 1px;
 }
 
-#flip-button:active{
+#flip-button:not(:disabled):active{
     translate: 4px 4px;
     box-shadow: none;
+}
+
+#flip-button:disabled{
+    filter: grayscale();
+
+}
+
+@keyframes spin {
+    0%{
+        transform: rotateY(var(--rotation));
+    }    
+    100%{
+        transform: rotateY(calc(var(--rotation) + 180deg * var(--spins)));
+    }
 }
