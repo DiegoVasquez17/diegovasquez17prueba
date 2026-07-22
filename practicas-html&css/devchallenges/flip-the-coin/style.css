@@ -10,6 +10,13 @@
 }
 
 body{
+    --body-pad: 12px;
+    padding: var(--body-pad);
+    background-image: linear-gradient(to top, #533, #335);
+}
+
+.main{
+    height: calc(100dvh - var(--body-pad) * 2);
     background-color: #404A65;
     color: #fff;
     display: flex;
@@ -17,6 +24,7 @@ body{
     align-items: center;
     padding: 50px;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius: 8px;
 
 }
 
@@ -49,7 +57,8 @@ body{
     height: 100px;
     margin-bottom: 25px;
     position: relative;
-    --spins: 20;
+    --spins: 20; /*This will determine the ammount of spins the coin wil make every 
+    button/coin click*/
 }
 
 .heads, .tails{
@@ -58,6 +67,13 @@ body{
     backface-visibility: hidden;
 }
 
+/* 
+the --rotation variable is used to define the coin rotation before the animations starts
+and after it ends, and also, to calculate from which rotation the animation will begin and 
+in which it will end.
+It will have a different value depending of the scope. In the .tails class, its value will
+be 180deg so that the tails side will always be opposite to heads.
+*/
 .heads{
     --rotation: 0deg;
     transform: rotateY(var(--rotation));
@@ -104,6 +120,8 @@ body{
 
 }
 
+/* This animation spins the coin from the initial rotation to a final rotation
+determined by a random number of spins between 20 and 50 */
 @keyframes spin {
     0%{
         transform: rotateY(var(--rotation));
